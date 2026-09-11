@@ -2,7 +2,8 @@
 // Every mode (breed, diet, skin, food) goes through this same function —
 // the backend decides what shape of reply to send back.
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const rawUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_URL = rawUrl.replace(/\/$/, '')
 
 export class ApiError extends Error {
   constructor(message, status) {
