@@ -1,0 +1,59 @@
+:root {
+  --bg: #F6F3EC;
+  --ink: #1C231E;
+  --ink-soft: #4A544C;
+  --pine: #2F5233;
+  --pine-deep: #203823;
+  --amber: #B9832E;
+  --brick: #A83E30;
+  --sage: #D7DECD;
+  --card: #FFFFFF;
+  --line: #C9CFC0;
+  --radius: 4px;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  background: #E4E0D4;
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.08;
+}
+
+p {
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-body);
+}

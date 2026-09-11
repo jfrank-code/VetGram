@@ -1,0 +1,61 @@
+.app {
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.topbarTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px 0;
+}
+
+.backBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.backBtn:hover {
+  border-color: var(--pine);
+  color: var(--pine);
+}
+
+.threadContainer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.thread {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  padding: 16px 16px 8px;
+}

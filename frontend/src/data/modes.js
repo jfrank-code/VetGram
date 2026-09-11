@@ -1,0 +1,43 @@
+export const modes = [
+  {
+    id: 'breed',
+    label: 'Breed ID',
+    icon: 'PawPrint',
+    accent: '#2C6E8E',
+    placeholder: 'Attach a photo to identify the breed…',
+    intro: "Attach a photo of your pet and I'll identify the species and breed — using two models side by side.",
+    introQuickReplies: ['Try a sample photo'],
+    suggestions: [],
+  },
+  {
+    id: 'diet',
+    label: 'Diet Expert',
+    icon: 'Utensils',
+    accent: '#2F5233',
+    placeholder: 'Type your answer…',
+    intro: "Let's build a feeding plan. What's your pet's weight, in kg?",
+    introQuickReplies: [],
+    suggestions: [],
+  },
+  {
+    id: 'skin',
+    label: 'Skin Screening',
+    icon: 'Stethoscope',
+    accent: '#6B4C7A',
+    placeholder: 'Attach a close-up photo of the area…',
+    intro:
+      "Attach a close-up photo of the skin area you're concerned about. Screening only, not a diagnosis.",
+    introQuickReplies: ['Try a sample photo'],
+    suggestions: [],
+  },
+  {
+    id: 'food',
+    label: 'Food Safety',
+    icon: 'ShieldAlert',
+    accent: '#A83E30',
+    placeholder: 'Type an ingredient, or attach a photo of the plate…',
+    intro: "Ask about an ingredient, or send a photo of what's on the plate.",
+    introQuickReplies: [],
+    suggestions: ['Grapes', 'Chocolate', 'Onion', 'Xylitol', 'Avocado'],
+  },
+]

@@ -1,0 +1,248 @@
+.row {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.rowUser {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 82%;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.assistant {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-bottom-left-radius: 3px;
+}
+
+.user {
+  background: var(--pine);
+  color: #fff;
+  border-bottom-right-radius: 3px;
+}
+
+.text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  /* globals.css sets a global `p { color: var(--ink-soft) }` for body
+     text — that beats the inherited white from .user by specificity,
+     which is why user-bubble text was rendering nearly invisible on the
+     dark green background. This overrides it back to inherit properly. */
+  color: inherit;
+}
+
+.image {
+  display: block;
+  max-width: 220px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* --- generic result card (toxicity / diet) --- */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-top: 2px;
+}
+
+.cardMeta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.toxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.light.red {
+  background: #A83E30;
+  box-shadow: 0 0 0 4px rgba(168, 62, 48, 0.15);
+}
+
+.light.green {
+  background: #3E7A4A;
+  box-shadow: 0 0 0 4px rgba(62, 122, 74, 0.15);
+}
+
+.light.amber {
+  background: #B8842E;
+  box-shadow: 0 0 0 4px rgba(184, 132, 46, 0.15);
+}
+
+.toxRow b {
+  color: #A83E30;
+}
+
+.toxList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toxItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.toxItem:not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.toxName {
+  font-weight: 600;
+  font-size: 13.5px;
+  margin-right: 4px;
+}
+
+/* --- diet card --- */
+.dietText {
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+.readout {
+  display: flex;
+  gap: 24px;
+}
+
+.readoutLabel {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
+.readoutValue {
+  font-family: var(--font-mono);
+  font-size: 21px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.dietExplanation {
+  margin: 12px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.errorText {
+  margin: 0;
+  font-size: 13.5px;
+  color: #A83E30;
+}
+
+/* --- compare card (breed / skin) --- */
+.compareWrap {
+  margin-top: 2px;
+}
+
+.compareGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.compareCard {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 11px;
+}
+
+.compareLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.compareValue {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.compareMeta {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.agreeRow,
+.disagreeRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-top: 9px;
+}
+
+.agreeRow {
+  color: #3E7A4A;
+}
+
+.disagreeRow {
+  color: #A83E30;
+}
+
+.footnote {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* --- quick reply chips --- */
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.chip {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: #fff;
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+@media (max-width: 420px) {
+  .compareGrid {
+    grid-template-columns: 1fr;
+  }
+}

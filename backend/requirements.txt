@@ -1,0 +1,38 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+openai>=1.54.0
+python-dotenv==1.0.1
+pydantic==2.9.2
+
+# Specialist ML models (breed classifier + skin classifier)
+# CPU-only wheels — Railway has no GPU, and the default PyPI torch wheel
+# pulls in CUDA libraries you'll never use (multi-GB, slow build). This
+# index is tried first; pip falls back to PyPI for everything else.
+--extra-index-url https://download.pytorch.org/whl/cpu
+# Pinned to a minimum that satisfies transformers' own requirement
+# (torch >= 2.5) — if you have an older torch already installed, running
+# `pip install -r requirements.txt` again will upgrade it automatically,
+# since your current version won't satisfy this bound anymore.
+torch>=2.5.0
+torchvision>=0.20.0
+transformers>=4.44.0
+timm>=1.0.0
+huggingface_hub>=0.24.0
+# ikchain/vet-dermatology-canine's checkpoint was pickled with NumPy 2.x
+# (it references numpy._core internally) — an older NumPy can't unpickle
+# it and fails with "No module named 'numpy._core'". Force 2.x here.
+# Force a scikit-learn build compiled against NumPy 2.x — transformers
+# pulls it in transitively (via generation/candidate_generator.py), and an
+# old sklearn wheel built against NumPy 1.x throws "numpy.dtype size
+# changed, may indicate binary incompatibility" once numpy is upgraded.
+# Force rebuilds of every binary package in the sklearn/pandas/pyarrow
+# import chain that transformers pulls in transitively (via
+# generation/candidate_generator.py) — any of these left over from an
+# older NumPy 1.x install breaks with "_ARRAY_API not found" once numpy
+# itself is upgraded to 2.x.
+scikit-learn>=1.4.0
+pandas>=2.2.0
+pyarrow>=16.0.0
+numpy>=2.0.0
+pillow>=10.3.0
+requests>=2.31.0

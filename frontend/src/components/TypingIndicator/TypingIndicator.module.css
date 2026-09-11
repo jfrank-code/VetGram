@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  border-bottom-left-radius: 3px;
+  padding: 12px 14px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent, var(--pine));
+  opacity: 0.4;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
